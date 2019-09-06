@@ -26,7 +26,6 @@ public class Main {
 class PassengerThread extends Thread {
     Semaphore sem;
     CountDownLatch cdl;
-    int num = 0;
     int id;
 
     public PassengerThread(Semaphore sem,CountDownLatch cdl, int id) {
@@ -42,7 +41,7 @@ class PassengerThread extends Thread {
             sem.acquire();
             System.out.println("Пассажир " + id + " покупает билет");
             sleep(1000);
-            num++;
+
 
             System.out.println("Пассажир " + id + " освобождает кассу");
             sem.release();
